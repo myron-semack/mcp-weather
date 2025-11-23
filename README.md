@@ -1,6 +1,8 @@
-# MCP Weather Server
+# MCP Weather Server (AccuWeather)
 
 A simple MCP server that provides hourly weather forecasts using the AccuWeather API.
+
+Forked from [adhikasp/mcp-weather](https://github.com/adhikasp/mcp-weather) for personal development.
 
 ## Setup
 
@@ -24,7 +26,7 @@ You can get an API key by registering at [AccuWeather API](https://developer.acc
     "mcpServers": {
         "weather": {
             "command": "uvx",
-            "args": ["--from", "git+https://github.com/adhikasp/mcp-weather.git", "mcp-weather"],
+            "args": ["--from", "git+https://github.com/myron-semack/mcp-weather.git", "mcp-weather"],
             "env": {
                 "ACCUWEATHER_API_KEY": "your_api_key_here"
             }
@@ -40,32 +42,32 @@ You can get an API key by registering at [AccuWeather API](https://developer.acc
 Response:
 ```json
 {
-    "location": "Jakarta",
-    "location_key": "208971",
-    "country": "Indonesia",
-    "current_conditions": {
-        "temperature": {
-            "value": 32.2,
-            "unit": "C"
-        },
-        "weather_text": "Partly sunny",
-        "relative_humidity": 75,
-        "precipitation": false,
-        "observation_time": "2024-01-01T12:00:00+07:00"
+  "location": "State College",
+  "location_key": "335315",
+  "country": "United States",
+  "current_conditions": {
+    "temperature": {
+      "value": 6.9,
+      "unit": "C"
     },
-    "hourly_forecast": [
-        {
-            "relative_time": "+1 hour",
-            "temperature": {
-                "value": 32.2,
-                "unit": "C"
-            },
-            "weather_text": "Partly sunny",
-            "precipitation_probability": 40,
-            "precipitation_type": "Rain",
-            "precipitation_intensity": "Light"
-        }
-    ]
+    "weather_text": "Mostly clear",
+    "relative_humidity": null,
+    "precipitation": false,
+    "observation_time": "2025-11-23T18:32:00-05:00"
+  },
+  "hourly_forecast": [
+    {
+      "relative_time": "+1 hour",
+      "temperature": {
+        "value": 6.7,
+        "unit": "C"
+      },
+      "weather_text": "Partly cloudy",
+      "precipitation_probability": 0,
+      "precipitation_type": null,
+      "precipitation_intensity": null
+    }
+  ]
 }
 ```
 
